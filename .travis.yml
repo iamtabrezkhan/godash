@@ -3,5 +3,7 @@ go:
   - 1.14
 before_install:
   - go get github.com/mattn/goveralls
+before_script:
+  - go test -v ./... -cover -race -coverprofile=/home/ubuntu/coverage.out
 script:
-  - $GOPATH/bin/goveralls -service=travis-ci
+  - $GOPATH/bin/goveralls -coverprofile=/home/ubuntu/coverage.out -service=travis-ci
