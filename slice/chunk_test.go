@@ -23,8 +23,23 @@ func TestChunk(t *testing.T) {
 		Result interface{}
 	}{
 		{
+			[]string{"1", "2", "3", "4", "5"},
+			1,
+			[][]string{[]string{"1"}, []string{"2"}, []string{"3"}, []string{"4"}, []string{"5"}},
+		},
+		{
 			[]int{1, 2, 3, 4, 5},
 			1,
+			[][]int{[]int{1}, []int{2}, []int{3}, []int{4}, []int{5}},
+		},
+		{
+			[]int{1, 2, 3, 4, 5},
+			0,
+			[][]int{[]int{1}, []int{2}, []int{3}, []int{4}, []int{5}},
+		},
+		{
+			[]int{1, 2, 3, 4, 5},
+			-1,
 			[][]int{[]int{1}, []int{2}, []int{3}, []int{4}, []int{5}},
 		},
 		{
