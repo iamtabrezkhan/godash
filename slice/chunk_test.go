@@ -6,7 +6,16 @@ import (
 	"testing"
 )
 
+type person struct {
+	name string
+}
+
 func TestChunk(t *testing.T) {
+
+	p1 := person{"jon"}
+	p2 := person{"mike"}
+	p3 := person{"jennifer"}
+	p4 := person{"harry"}
 
 	testCases := []struct {
 		Slice  interface{}
@@ -92,6 +101,11 @@ func TestChunk(t *testing.T) {
 			[]bool{true, false, true, false, true},
 			2,
 			[][]bool{[]bool{true, false}, []bool{true, false}, []bool{true}},
+		},
+		{
+			[]person{p1, p2, p3, p4},
+			2,
+			[][]person{[]person{p1, p2}, []person{p3, p4}},
 		},
 	}
 
