@@ -16,6 +16,7 @@ func TestChunk(t *testing.T) {
 	p2 := person{"mike"}
 	p3 := person{"jennifer"}
 	p4 := person{"harry"}
+	p5 := person{"ron"}
 
 	testCases := []struct {
 		Slice  interface{}
@@ -126,6 +127,11 @@ func TestChunk(t *testing.T) {
 			[]person{p1, p2, p3, p4},
 			2,
 			[][]person{[]person{p1, p2}, []person{p3, p4}},
+		},
+		{
+			[]person{p1, p2, p3, p4, p5},
+			2,
+			[][]person{[]person{p1, p2}, []person{p3, p4}, []person{p5}},
 		},
 	}
 
