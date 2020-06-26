@@ -145,3 +145,9 @@ func TestChunk(t *testing.T) {
 	}
 
 }
+
+func TestChunkPanic(t *testing.T) {
+	defer func() { recover() }()
+	Chunk(123, 1)
+	t.Errorf("should have panicked!")
+}
