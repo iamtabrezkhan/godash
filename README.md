@@ -3,6 +3,7 @@
 [![Documentation](https://godoc.org/github.com/iamtabrezkhan/godash?status.svg)](http://godoc.org/github.com/iamtabrezkhan/godash)
 [![Build Status](https://travis-ci.org/iamtabrezkhan/godash.svg?branch=master)](https://travis-ci.org/iamtabrezkhan/godash)
 [![Coverage Status](https://coveralls.io/repos/github/iamtabrezkhan/godash/badge.svg?branch=master)](https://coveralls.io/github/iamtabrezkhan/godash?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/iamtabrezkhan/godash)](https://goreportcard.com/report/github.com/iamtabrezkhan/godash)
 
 This library contains different packages for different collection types that you can import. For instance, to import functions related to slices you can do something like:
 ```go
