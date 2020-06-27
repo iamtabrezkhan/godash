@@ -18,11 +18,26 @@ func TestChunk(t *testing.T) {
 	p4 := person{"harry"}
 	p5 := person{"ron"}
 
+	var emptyFunc func() bool
+	emptyFuncPtr := &emptyFunc
+
+	nonEmptyFunc := func() bool { return true }
+	nonEmptyFuncPtr := &nonEmptyFunc
+
+	map1 := make(map[string]int)
+	map2 := make(map[string]int)
+	map3 := make(map[string]int)
+
 	testCases := []struct {
 		Slice  interface{}
 		Size   int
 		Result interface{}
 	}{
+		{
+			[]interface{}{42, emptyFuncPtr, emptyFunc, nonEmptyFuncPtr},
+			2,
+			[][]interface{}{{42, emptyFuncPtr}, {emptyFunc, nonEmptyFuncPtr}},
+		},
 		{
 			[]string{"1", "2", "3", "4", "5"},
 			1,
@@ -133,11 +148,23 @@ func TestChunk(t *testing.T) {
 			2,
 			[][]person{{p1, p2}, {p3, p4}, {p5}},
 		},
+		{
+			[]map[string]int{map1, map2, map3},
+			2,
+			[][]map[string]int{{map1, map2}, {map3}},
+		},
+		{
+			[]rune{'a', 'b', 'd'},
+			2,
+			[][]rune{{97, 98}, {100}},
+		},
 	}
 
 	for i, testCase := range testCases {
-		t.Run(fmt.Sprintf("test case #%d", i+1), func(t *testing.T) {
+		t.Run(fmt.Sprintf("test case #%d\n", i+1), func(t *testing.T) {
+			fmt.Printf("Expected: %v\n", testCase.Result)
 			output := Chunk(testCase.Slice, testCase.Size)
+			fmt.Printf("Output: %v\n", output)
 			if !reflect.DeepEqual(testCase.Result, output) {
 				t.Errorf("Expected %v, received %v", testCase.Result, output)
 			}
