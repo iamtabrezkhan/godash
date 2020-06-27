@@ -29,7 +29,7 @@ slice.Chunk([]int{1, 2, 3, 4, 5}, 2) // ==> [[1, 2], [3, 4], [5]]
 
 ## Packages
 
-- [slice](slice/README.md) [![Documentation](https://godoc.org/github.com/iamtabrezkhan/godash?status.svg)](http://godoc.org/github.com/iamtabrezkhan/godash/slice)
+- [slice](slice/README.md) [![Documentation](https://godoc.org/github.com/iamtabrezkhan/godash/slice?status.svg)](http://godoc.org/github.com/iamtabrezkhan/godash/slice)
 - more soon...
 
 ## Author
