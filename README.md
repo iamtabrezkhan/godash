@@ -1,11 +1,11 @@
 # Godash - A port of [lodash](http://lodash.com/) utility functions for Go language
 
-[![Documentation](https://godoc.org/github.com/iamtabrezkhan/godash?status.svg)](http://godoc.org/github.com/iamtabrezkhan/godash)
 [![Build Status](https://travis-ci.org/iamtabrezkhan/godash.svg?branch=master)](https://travis-ci.org/iamtabrezkhan/godash)
 [![Coverage Status](https://coveralls.io/repos/github/iamtabrezkhan/godash/badge.svg?branch=master)](https://coveralls.io/github/iamtabrezkhan/godash?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/iamtabrezkhan/godash)](https://goreportcard.com/report/github.com/iamtabrezkhan/godash)
 
 This library contains different packages for different collection types that you can import. For instance, to import functions related to slices you can do something like:
+
 ```go
 import "github.com/iamtabrezkhan/godash/slice"
 ```
@@ -13,6 +13,7 @@ import "github.com/iamtabrezkhan/godash/slice"
 > Note: This library heavily relies on reflection, and it checks for types on runtime, so make sure you have good test suites. Although, for most of the known types we are avoiding the use of reflect and only using when there are unknown custom types.
 
 ## Install
+
 ```sh
 go get github.com/iamtabrezkhan/godash
 ```
@@ -28,7 +29,7 @@ slice.Chunk([]int{1, 2, 3, 4, 5}, 2) // ==> [[1, 2], [3, 4], [5]]
 
 ## Packages
 
-- [slice](slice/README.md)
+- [slice](slice/README.md) [![Documentation](https://godoc.org/github.com/iamtabrezkhan/godash?status.svg)](http://godoc.org/github.com/iamtabrezkhan/godash/slice)
 - more soon...
 
 ## Author
