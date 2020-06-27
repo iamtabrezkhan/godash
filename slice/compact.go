@@ -1,7 +1,6 @@
 package slice
 
 import (
-	"fmt"
 	"reflect"
 )
 
@@ -216,17 +215,6 @@ func Compact(slice interface{}) interface{} {
 				}
 			}
 			return res
-		}
-	case reflect.Func:
-		{
-			res := reflect.MakeSlice(s.Type(), 0, len)
-			for i := 0; i < len; i++ {
-				if !s.Index(i).IsNil() {
-					fmt.Println(reflect.Indirect(s.Index(i).Addr()))
-					res = reflect.Append(res, s.Index(i))
-				}
-			}
-			return res.Interface()
 		}
 	}
 	res := reflect.MakeSlice(s.Type(), 0, len)
