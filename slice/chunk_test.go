@@ -20,7 +20,6 @@ func TestChunk(t *testing.T) {
 
 	var emptyFunc func() bool
 	emptyFuncPtr := &emptyFunc
-
 	nonEmptyFunc := func() bool { return true }
 	nonEmptyFuncPtr := &nonEmptyFunc
 
@@ -154,9 +153,9 @@ func TestChunk(t *testing.T) {
 			[][]map[string]int{{map1, map2}, {map3}},
 		},
 		{
-			[]rune{'a', 'b', 'd'},
+			[]rune{'a', 'b', 'd', 'e'},
 			2,
-			[][]rune{{97, 98}, {100}},
+			[][]rune{{'a', 'b'}, {'d', 'e'}},
 		},
 	}
 
