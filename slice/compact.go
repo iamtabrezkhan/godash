@@ -7,7 +7,7 @@ import (
 
 // Compact removes all the `zero values` and returns a new slice
 //
-// Example
+// Examples:
 // 	s := []int{1, 0, 3, 10, 0, 5, 0}
 // 	Compact(s) // ==> [1, 3, 10, 5]
 // 	Compact([]string{"abc", "hello", ""}) // ==> ["abc", "hello"]
