@@ -157,6 +157,11 @@ func TestChunk(t *testing.T) {
 			2,
 			[][]rune{{'a', 'b'}, {'d', 'e'}},
 		},
+		{
+			[][]rune{{'a'}, {'b'}, {'d'}, {'e'}},
+			2,
+			[][][]rune{{{'a'}, {'b'}}, {{'d'}, {'e'}}},
+		},
 	}
 
 	for i, testCase := range testCases {
