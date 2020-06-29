@@ -42,3 +42,15 @@ slice.
 Examples:
 
     Difference([]int{1, 2, 3}, []int{2, 3}) // ==> [1]
+
+#### func  Drop
+
+```go
+func Drop(slice interface{}, n int) interface{}
+```
+Drop returns a slice of array with n elements dropped from the beginning.
+
+Examples:
+
+    Drop([]int{1, 2, 3}, 1) // => [2, 3]
+    Drop([]int{1, 2, 3}, 2) // => [3]
